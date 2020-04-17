@@ -90,7 +90,7 @@ function render() {
     for (let i = 0; i < questionData.choices.length; i++) {
         let choice = questionData.choices[i];
         let newElm = document.createElement("li");
-        newElm.innerHTML = "<button id =\"" + choice + "\" class =\"btn btn-info btn-xs\">" + choice + "</button>";
+        newElm.innerHTML = "<button id =\"" + choice + "\" class =\"btn btn-info btn-xs m-1\">" + choice + "</button>";
         newElm.firstElementChild.addEventListener("click", function(){
             let isCorrect;
             if (choice !== questionData.answer) {
