@@ -14,7 +14,7 @@
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="index.html"> Home</a>
         <a class="navbar-text mr-auto " href="score.html"> View Highscores </a>
-        <h5> Time: <span id = "time" > 90 </span> </h5>
+        <h5> Time: <span id="time"> 90 </span> </h5>
     </nav>
 
     <br>
@@ -43,6 +43,20 @@
                     <div id="quizPage">
                         <h2 id="question"></h2>
                         <ul id="options"></ul>
+                    </div>
+
+                    <div id="resultPage"> 
+                        <h2 class="text-center"> All Done!</h2>
+                        <p class="text-center"> Your final score is: <span id = "score"> </span></p>
+                        <form class="row">
+                            <div class="col-8">
+                                <input id = "userInput" type="text" class="form-control mb-2"
+                                    placeholder="Enter your name">
+                            </div>
+                            <div class="col-4">
+                                <button id = "submitResult" type="submit" class="btn btn-primary mr-auto"> Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-3"></div>
