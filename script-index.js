@@ -8,9 +8,13 @@ let resultPage = document.querySelector("#resultPage");
 let score = document.querySelector("#score");
 let submitResult = document.querySelector("#submitResult");
 let userInput = document.querySelector("#userInput");
+let correct = document.querySelector("#correct");
+let wrong = document.querySelector("#wrong");
 
-// hide resultPage
+// hide resultPage, correct & wrong message. 
 resultPage.style.display = 'none';
+correct.style.display = 'none';
+wrong.style.display = 'none';
 
 // define interval
 let interval;
@@ -88,16 +92,30 @@ function render() {
         let newElm = document.createElement("li");
         newElm.innerHTML = "<button id =\"" + choice + "\" class =\"btn btn-info btn-xs\">" + choice + "</button>";
         newElm.firstElementChild.addEventListener("click", function(){
+            let isCorrect;
             if (choice !== questionData.answer) {
-                time.textContent -= 10;
+                time.textContent -= 10;    
+                isCorrect = false; 
+                wrong.style.display = "block";           
+            } else {
+                isCorrect = true;
+                correct.style.display = "block";
             }
 
-            if (currentQuestionId === quizQuestions.length){
-                finish();
-            } else {
-                render();
-            }
+            setTimeout(function(){
+                if (isCorrect){
+                    correct.style.display = "none";
+                } else {
+                    wrong.style.display = "none";
+                }
+                if (currentQuestionId === quizQuestions.length){
+                    finish();
+                } else {
+                    render();
+                }
+            }, 1000);
         });
+
         options.appendChild(newElm);
     }
 }
@@ -109,6 +127,7 @@ function finish() {
     options.innerHTML = '';
 
     resultPage.style.display = 'block';
+
     score.textContent = time.textContent;
 }
 

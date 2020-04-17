@@ -9,8 +9,8 @@ let clearScore = document.querySelector("#clearScore");
 let scores = JSON.parse(localStorage.getItem("scores"));
 
 function compare(scoreA, scoreB) {
-    let a = scoreA.score;
-    let b = scoreB.score;
+    let a = parseInt(scoreA.score);
+    let b = parseInt(scoreB.score);
 
     if (a > b) return -1;
     if (a < b) return 1;
