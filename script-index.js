@@ -31,7 +31,7 @@ if (scores === null){
 // define quiz questions
 let quizQuestions = [
     {
-        question: "What JS method is used to print a string to console?",
+        question: "What JS method is used to log a string to the console?",
         choices: ["print()", "System.out.println()", "console.log()", "printf()"],
         answer: "console.log()",
     },
@@ -41,12 +41,12 @@ let quizQuestions = [
         answer: "12a"
     },
     {
-        question: "What is the javascript library?",
+        question: "Which following choice is a Javascript library?",
         choices: ["JQuery", "HTML", "scikit-learn", "CSS"],
         answer: "JQuery"
     },
     {
-        question: "What IS NOT the commonly used data types?",
+        question: "Which IS NOT the commonly used data types?",
         choices: ["Boolean", "Time", "Number", "String"],
         answer: "Time"
     },
