@@ -1,13 +1,13 @@
 // select DOM elements
-
 let tableBody = document.querySelector("#tableBody");
 let goBack = document.querySelector("#goBack");
 let clearScore = document.querySelector("#clearScore");
 
 
-// get scores from local storage and sort by comparing each object's score
+// get scores from local storage
 let scores = JSON.parse(localStorage.getItem("scores"));
 
+// define compare function used to sort by using each object's score 
 function compare(scoreA, scoreB) {
     let a = parseInt(scoreA.score);
     let b = parseInt(scoreB.score);
@@ -18,8 +18,7 @@ function compare(scoreA, scoreB) {
     return 0;
 }
 
-// sort obejct array, and call renderScores to display scores loaded from local storage.
-
+// if there's scores stored in local storage, load and sort it. Then call renderScores to display scores.
 if (scores !== null) {
     scores.sort(compare);
     renderScores();
@@ -50,6 +49,7 @@ function renderScores() {
     }
 }
 
+// clearScores() clears out local storage item and innter html contents of the table body. 
 function clearScores() {
     localStorage.clear();
     tableBody.innerHTML = "";

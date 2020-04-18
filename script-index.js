@@ -93,6 +93,8 @@ function render() {
         newElm.innerHTML = "<button id =\"" + choice + "\" class =\"btn btn-info btn-xs m-1\">" + choice + "</button>";
         newElm.firstElementChild.addEventListener("click", function(){
             let isCorrect;
+
+            // check the answer is correct or not, then show the corresponding result.
             if (choice !== questionData.answer) {
                 time.textContent -= 10;    
                 isCorrect = false; 
@@ -102,6 +104,7 @@ function render() {
                 correct.style.display = "block";
             }
 
+            // wait 1000ms to hide the result and render next question or finish the quiz
             setTimeout(function(){
                 if (isCorrect){
                     correct.style.display = "none";
@@ -122,12 +125,15 @@ function render() {
 
 // finishing quiz (clearing interval, questions and options) and show result to the user
 function finish() {
+    // clear out interval and quiz contents
     clearInterval(interval);
     question.textContent = '';
     options.innerHTML = '';
 
+    // show the result page
     resultPage.style.display = 'block';
 
+    // setting the score
     score.textContent = time.textContent;
 }
 
@@ -137,7 +143,6 @@ submitResult.addEventListener("click", storeResult);
 
 
 // storeResult to local storage
-
 function storeResult(event){
     event.preventDefault();
     scores.push({
