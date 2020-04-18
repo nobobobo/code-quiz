@@ -96,7 +96,11 @@ function render() {
 
             // check the answer is correct or not, then show the corresponding result.
             if (choice !== questionData.answer) {
-                time.textContent -= 10;    
+                time.textContent -= 10;  
+                time.style.color = "red";
+                setTimeout(function(){
+                    time.style.color = "black";
+                }, 1000);
                 isCorrect = false; 
                 wrong.style.display = "block";           
             } else {
