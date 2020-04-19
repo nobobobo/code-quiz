@@ -2,6 +2,8 @@
 
 
 ## Introduction
+![Homepage](Screen Shot 2020-04-18 at 8.47.21 PM.png)
+
 This application shows multple choice questions as a coding a quiz. 
 
 Users are given the specific time (90s) to answer the quesitons.
