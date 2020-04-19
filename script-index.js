@@ -89,7 +89,7 @@ function render() {
 
     let questionData = quizQuestions[currentQuestionId];
     question.textContent = questionData.question;
-    options.innerHTML = '';
+    options.innerHTML = "";
 
     currentQuestionId += 1;
 
@@ -109,7 +109,7 @@ function render() {
 
             // keep track the answer is correct or not 
             let isCorrect;
-            
+
             
             // check the answer is correct or not, then show the corresponding result.
             if (choice !== questionData.answer) {
