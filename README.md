@@ -1,15 +1,19 @@
 # Code Quiz!
-
+Application Link: https://nobobobo.github.io/code-quiz/
 
 ## Introduction
-![Homepage](Screen Shot 2020-04-18 at 8.47.21 PM.png)
 
-This application shows multple choice questions as a coding a quiz. 
+### This application shows multple choice questions as a coding a quiz. 
+![Homepage](ScreenShot-1.png)
 
-Users are given the specific time (90s) to answer the quesitons.
+### Users are given the specific time (90s) to answer the quesitons.
+![QuestionPage](ScreenShot-2.png)
 
-Final remaining time is used as a score and can be submitted to the leaderboard. 
+### Final remaining time is used as a score and can be submitted to the leaderboard. 
+![ResultPage](ScreenShot-3.png)
 
+### The leaderboard displays stored scores for previous users. 
+![Leaderboard](ScreenShot-4.png)
 
 ## How it works
 
