@@ -79,8 +79,14 @@ function startQuiz() {
 
 }
 
+
 // display quiz question and options 
 function render() {
+    // keep track the user has chosen the answer for the quesiton. At most 1 answer that the user can make
+
+    let hasSelected = false;
+
+
     let questionData = quizQuestions[currentQuestionId];
     question.textContent = questionData.question;
     options.innerHTML = '';
@@ -91,9 +97,20 @@ function render() {
         let choice = questionData.choices[i];
         let newElm = document.createElement("li");
         newElm.innerHTML = "<button id =\"" + choice + "\" class =\"btn btn-info btn-xs m-1\">" + choice + "</button>";
-        newElm.firstElementChild.addEventListener("click", function(){
-            let isCorrect;
+        newElm.firstElementChild.addEventListener("click", function helper(){
+            
+            // check if the user has already selected or not. 
+            if (hasSelected){
+                return;
+            } else {
+                hasSelected = true;
+            }
+            
 
+            // keep track the answer is correct or not 
+            let isCorrect;
+            
+            
             // check the answer is correct or not, then show the corresponding result.
             if (choice !== questionData.answer) {
                 time.textContent -= 10;  
